@@ -38,7 +38,7 @@ def linear_reg(dataframe):
     months_2022 = np.arange(len(dataframe) + 1, len(dataframe) + 13).reshape(-1, 1)
     predictions_2022 = np.c_[np.ones(len(months_2022)), months_2022] @ weights
 
-    return predictions_2022
+    return weights, predictions_2022
 
 def plot_preds(predictions,model_name):
     # Visualize the results
@@ -54,6 +54,6 @@ def plot_preds(predictions,model_name):
 monthly_data = gen_df('data/data_daily.csv')
 
 # Linear Regression (Base Line) Model 
-predictions_2022 = linear_reg(monthly_data)
+weights, predictions_2022 = linear_reg(monthly_data)
 plot_preds(predictions_2022,'linear_regression')
 
