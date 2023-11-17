@@ -10,6 +10,7 @@ conda env export > mlreceipts
 ```
 
 Directory Structure:
+```bash
 ML-Model-For-Receipts
     |-- Dockerfile
     |-- README.md
@@ -27,3 +28,4 @@ ML-Model-For-Receipts
     |-- templates
         |-- index.html
     |-- trained_weights.npz
+```
