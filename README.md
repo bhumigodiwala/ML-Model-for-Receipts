@@ -1,5 +1,12 @@
 # ML-Model-for-Receipts
-Predicting the approximate number of the scanned receipts for each month for upcoming year
+
+The problem statement provides data for the count of receipts for every month in the year 2021. Based on this knowledge we design a machine learning model that predicts the approximate number of the scanned receipts for each month for year 2022. The solution involves training a machine learning model from scratch, saving the weights of the trained model and based on that making predictions. The implementation is then deployed in form of a web application with the help of DOCKER.
+
+![Home_Page]('app_images/home_page.png')
+
+The web application returns the approximate count of scanned receipts in 2022 as the user enters the number of the month (1-12) as shown below:
+
+
 
 To Create and Update the virtual environment RUN:
 
@@ -15,6 +22,9 @@ ML-Model-For-Receipts
     |-- Dockerfile
     |-- README.md
     |-- app.py
+    |-- app_images
+        |-- April_pred.png
+        |-- home_page.png
     |-- data
         |-- data_daily.csv
     |-- mlreceipts
