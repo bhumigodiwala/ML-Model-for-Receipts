@@ -139,24 +139,29 @@ weights, predictions_2022 = linear_reg(monthly_data)
 plot_preds(predictions_2022,'linear_regression')
 plt.close()
 
-# Extract features (X) and labels (y)
-X_train = monthly_data[['Month']].values
-y_train = monthly_data[['Receipt_Count']].values
+def nn_prediction(df):
+    # Extract features (X) and labels (y)
+    X_train = df[['Month']].values
+    y_train = df[['Receipt_Count']].values
 
-# Months for prediction in 2022
-X_predict_2022 = np.arange(1, 13).reshape(-1, 1)  # Assuming you want to predict for months 1 to 12 of 2022
+    # Months for prediction in 2022
+    X_predict_2022 = np.arange(1, 13).reshape(-1, 1)  # Assuming you want to predict for months 1 to 12 of 2022
 
-# Normalize the data
-X_train_normalized = X_train / np.max(X_train)
-y_train_normalized = y_train / np.max(y_train)
-X_predict_normalized = X_predict_2022 / np.max(X_train)  # Normalize based on training data
+    # Normalize the data
+    X_train_normalized = X_train / np.max(X_train)
+    y_train_normalized = y_train / np.max(y_train)
+    X_predict_normalized = X_predict_2022 / np.max(X_train)  # Normalize based on training data
 
-nn = NN()
-# Train and predict
-nn_predictions_2022 = nn.train_and_predict(X_train_normalized, y_train_normalized, X_predict_normalized, hidden_size=4, epochs=1000, learning_rate=0.1)
+    nn = NN()
+    # Train and predict
+    nn_predictions_2022 = nn.train_and_predict(X_train_normalized, y_train_normalized, X_predict_normalized, hidden_size=4, epochs=1000, learning_rate=0.1)
 
-# Print predictions for each month in 2022
-for month, prediction in zip(X_predict_2022.flatten(), nn_predictions_2022.flatten()):
-    print(f"Predicted Receipt Count for Month {month} in 2022: {prediction * np.max(y_train)}")
-plot_preds((nn_predictions_2022* np.max(y_train)),'neural_network')
+    # Print predictions for each month in 2022
+    for month, prediction in zip(X_predict_2022.flatten(), nn_predictions_2022.flatten()):
+        print(f"Predicted Receipt Count for Month {month} in 2022: {prediction * np.max(y_train)}")
+    nn_pred = (nn_predictions_2022* np.max(y_train))
+    return nn_pred
+
+nn_pred = nn_prediction(monthly_data)
+plot_preds(nn_pred,'neural_network')
 plt.close()
