@@ -24,7 +24,7 @@ def predict():
     if 1 <= month <= 12:
         # Calculate prediction
         prediction = nn_pred.T
-        print("Prediction:", prediction[0])
+        print("Prediction:", prediction[0][month-1])
 
         return render_template('index.html', prediction=prediction[0][month-1])
     else:
