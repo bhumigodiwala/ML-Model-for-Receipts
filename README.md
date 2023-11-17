@@ -15,8 +15,8 @@ The web application returns the approximate count of scanned receipts in 2022 as
 ### Libraries and Packages to Install:
 - Python 3.9.6
 - Docker 20.10.17
-- Flask==2.2.5
-- Werkzeug==2.2.3
+- Flask 2.2.5
+- Werkzeug 2.2.3
 
 ## Data
 
@@ -89,7 +89,7 @@ docker ps
 docker run -p 8080:5000 receipts-prediction-app
 ```
 
-Once the docker is up and running open other terminal, activate the virtual environment and run the model.py file.
+Once the docker is up and running open other terminal, activate the virtual environment and run the app.py file.
 In another terminal:
 ```
 conda activate mlreceipts
