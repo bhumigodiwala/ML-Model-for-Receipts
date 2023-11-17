@@ -10,20 +10,20 @@ conda env export > mlreceipts
 ```
 
 Directory Structure:
-
-- Dockerfile
-- README.md
-- app.py
-- data
-   |-- data_daily.csv
-- mlreceipts
-- model.py
-- model_weights
-   |-- linear_regression_weights.npy
-- output_plots
-   |-- linear_regression.jpg
-   |-- neural_network.jpg
-- requirements.txt
-- templates
-   |-- index.html
-- trained_weights.npz
+ML-Model-For-Receipts
+    |-- Dockerfile
+    |-- README.md
+    |-- app.py
+    |-- data
+        |-- data_daily.csv
+    |-- mlreceipts
+    |-- model.py
+    |-- model_weights
+        |-- linear_regression_weights.npy
+    |-- output_plots
+        |-- linear_regression.jpg
+        |-- neural_network.jpg
+    |-- requirements.txt
+    |-- templates
+        |-- index.html
+    |-- trained_weights.npz
