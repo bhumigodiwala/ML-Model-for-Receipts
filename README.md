@@ -47,13 +47,13 @@ ML-Model-For-Receipts
     |-- output.txt
     |-- model_weights
         |-- linear_regression_weights.npy
+        |-- trained_weights.npz
     |-- output_plots
         |-- linear_regression.jpg
         |-- neural_network.jpg
     |-- requirements.txt
     |-- templates
         |-- index.html
-    |-- trained_weights.npz
 ```
 
 ## Usage
