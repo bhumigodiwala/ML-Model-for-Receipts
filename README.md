@@ -72,6 +72,8 @@ python3 model.py
 
 The above command runs the designed machine learning model and the outputs are stored in 'model_output.txt' file and we can visualize it through plots stored in the `'output_plots/'` folder.
 
+The trained model weights can be found [here]("https://github.com/bhumigodiwala/ML-Model-for-Receipts/blob/main/model_weights/trained_weights.npz") in the `model_weights/` directory.
+
 ## Docker Setup
 
 To RUN the web-application using Docker, firstly ensure Docker is installed in your system.
