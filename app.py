@@ -7,8 +7,10 @@ app = Flask(__name__)
 monthly_data = gen_df('data/data_daily.csv')
 
 # Trained model weights (replace with your actual trained weights)
-weights = np.load('trained_weights.npz')
-nn_pred = nn_prediction(monthly_data)
+weights = np.load('model_weights/trained_weights.npz')
+with open('app_output.txt', 'w') as f:
+    print('Monthly Data: \n\n',monthly_data,'\n', file = f)
+    nn_pred = nn_prediction(monthly_data, file=f)
 
 @app.route('/')
 def home():

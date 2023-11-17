@@ -124,22 +124,14 @@ class NN:
                 print(f"Epoch {epoch}, Mean Squared Error: {mse}")
 
         # Save trained weights
-        np.savez('trained_weights.npz', weights_input_hidden=weights_input_hidden,
+        np.savez('model_weights/trained_weights.npz', weights_input_hidden=weights_input_hidden,
                 biases_hidden=biases_hidden, weights_hidden_output=weights_hidden_output, biases_output=biases_output)
 
         # Prediction
         hidden_layer_output, predicted_output = self.forward_pass(X_predict, weights_input_hidden, biases_hidden, weights_hidden_output, biases_output)
         return predicted_output
 
-monthly_data = gen_df('data/data_daily.csv')
-print(monthly_data)
-
-# # Linear Regression (Base Line) Model 
-weights, predictions_2022 = linear_reg(monthly_data)
-plot_preds(predictions_2022,'linear_regression')
-plt.close()
-
-def nn_prediction(df):
+def nn_prediction(df, file):
     # Extract features (X) and labels (y)
     X_train = df[['Month']].values
     y_train = df[['Receipt_Count']].values
@@ -158,10 +150,22 @@ def nn_prediction(df):
 
     # Print predictions for each month in 2022
     for month, prediction in zip(X_predict_2022.flatten(), nn_predictions_2022.flatten()):
-        print(f"Predicted Receipt Count for Month {month} in 2022: {prediction * np.max(y_train)}")
+        print(f"Predicted Receipt Count for Month {month} in 2022: {prediction * np.max(y_train)}", file = file)
     nn_pred = (nn_predictions_2022* np.max(y_train))
     return nn_pred
 
-nn_pred = nn_prediction(monthly_data)
-plot_preds(nn_pred,'neural_network')
-plt.close()
+with open('model_output.txt', 'w') as f:
+    monthly_data = gen_df('data/data_daily.csv')
+    print('Monthly Data: \n\n',monthly_data,'\n', file = f)
+
+    # Linear Regression (Base Line) Model 
+    weights, predictions_2022 = linear_reg(monthly_data)
+    plot_preds(predictions_2022,'linear_regression')
+    plt.close()
+
+    # Neural Network based Machine Learning Model
+    nn_pred = nn_prediction(monthly_data, f)
+    plot_preds(nn_pred,'neural_network')
+    plt.close()
+
+    f.close()

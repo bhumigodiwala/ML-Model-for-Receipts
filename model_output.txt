@@ -1,0 +1,29 @@
+Monthly Data: 
+
+             Receipt_Count  Month
+Date                            
+2021-01-31      236736687      1
+2021-02-28      220033460      2
+2021-03-31      248608625      3
+2021-04-30      250644830      4
+2021-05-31      263151748      5
+2021-06-30      260656840      6
+2021-07-31      274776003      7
+2021-08-31      283943231      8
+2021-09-30      281146154      9
+2021-10-31      295965185     10
+2021-11-30      296085162     11
+2021-12-31      309948684     12 
+
+Predicted Receipt Count for Month 1 in 2022: 241936076.93964168
+Predicted Receipt Count for Month 2 in 2022: 247667150.20481238
+Predicted Receipt Count for Month 3 in 2022: 253033869.19922388
+Predicted Receipt Count for Month 4 in 2022: 257997392.38150212
+Predicted Receipt Count for Month 5 in 2022: 262536143.14957947
+Predicted Receipt Count for Month 6 in 2022: 266644571.84800065
+Predicted Receipt Count for Month 7 in 2022: 270330775.73099667
+Predicted Receipt Count for Month 8 in 2022: 273613491.8161677
+Predicted Receipt Count for Month 9 in 2022: 276518946.60037565
+Predicted Receipt Count for Month 10 in 2022: 279077934.27400476
+Predicted Receipt Count for Month 11 in 2022: 281323352.0257574
+Predicted Receipt Count for Month 12 in 2022: 283288288.0314034
