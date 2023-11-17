@@ -4,7 +4,8 @@ The problem statement provides data for the count of receipts for every month in
 
 Home Page of Web Application:
 
-![Home_Page](https://github.com/bhumigodiwala/ML-Model-for-Receipts/blob/main/app_images/home_page.png)
+<img src="https://github.com/bhumigodiwala/ML-Model-for-Receipts/blob/main/app_images/home_page.png" width="200">
+<!-- ![Home_Page](https://github.com/bhumigodiwala/ML-Model-for-Receipts/blob/main/app_images/home_page.png) -->
 
 The web application returns the approximate count of scanned receipts in 2022 as the user enters the number of the month (1-12) as shown below:
 
