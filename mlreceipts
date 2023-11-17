@@ -100,6 +100,7 @@ dependencies:
   - zeromq=4.3.4=hc377ac9_0
   - zlib=1.2.13=h5a0b063_0
   - pip:
+      - -r requirements.txt
       - certifi==2023.7.22
       - charset-normalizer==3.3.2
       - contourpy==1.2.0
